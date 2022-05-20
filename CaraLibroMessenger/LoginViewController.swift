@@ -13,6 +13,7 @@ class LoginViewController : UIViewController{
     @IBOutlet weak var ViewInputRadiusPassword: UIView!
     @IBOutlet weak var ViewInputRadiusEmail: UIView!
     @IBOutlet weak var ViewContainerRadiusTopLeft: UIView!
+    @IBOutlet weak var ContentY: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
         print("LoginViewController - viewDidLoad")
@@ -24,14 +25,14 @@ class LoginViewController : UIViewController{
     }
     
     override func viewWillAppear(_ animated: Bool) {
-            super.viewWillAppear(animated)
-            self.registerKeyboardNotifications()
-        }
+        super.viewWillAppear(animated)
+        self.registerKeyboardNotifications()
+    }
 
-        override func viewWillDisappear(_ animated: Bool) {
-            super.viewWillDisappear(animated)
-            self.unregisterKeyboardNotifications()
-        }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.unregisterKeyboardNotifications()
+    }
 }
 
 extension LoginViewController {
@@ -57,24 +58,25 @@ extension LoginViewController {
     
     @objc private func keyboardWillShow(_ notification: Notification) {
         
-        // let animationDuration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double ?? 0
-        // let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect ?? .zero
+        let animationDuration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double ?? 0
+        let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect ?? .zero
         
-       /* if keyboardFrame.origin.y < self.viewContent.frame.maxY {
+       if keyboardFrame.origin.y < self.ViewContainerRadiusTopLeft.frame.maxY {
             
             UIView.animate(withDuration: animationDuration) {
-               self.anchorContentCenterY.constant = keyboardFrame.origin.y - self.viewContent.frame.maxY
+               self.ContentY.constant = keyboardFrame.origin.y - self.ViewContainerRadiusTopLeft.frame.maxY + 200
+                print("CONTENTY" , self.ContentY.constant)
                 self.view.layoutIfNeeded()
             }
-        }*/
+        }
     }
     
     @objc private func keyboardWillHide(_ notification: Notification) {
     
         let animationDuration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double ?? 0
         UIView.animate(withDuration: animationDuration) {
-            /*self.anchorContentCenterY.constant = 0
-            self.view.layoutIfNeeded()*/
+            self.ContentY.constant = 30
+            self.view.layoutIfNeeded()
         }
     }
 }
