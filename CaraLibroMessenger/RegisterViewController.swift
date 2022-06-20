@@ -26,7 +26,7 @@ class RegisterViewController: UIViewController{
         InputLastName.layer.cornerRadius = 15
         InputEmail.layer.cornerRadius = 15
         InputPassword.layer.cornerRadius = 15
-        ViewContainer.layer.cornerRadius = 100	
+        ViewContainer.layer.cornerRadius = 100
         ViewContainer.clipsToBounds = true
         ViewContainer.layer.maskedCorners = [.layerMaxXMinYCorner]
         }
