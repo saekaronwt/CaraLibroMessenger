@@ -22,7 +22,6 @@ class LoginViewController : UIViewController{
         ViewContainerRadiusTopLeft.layer.maskedCorners = [.layerMinXMinYCorner]
         ViewInputRadiusEmail.layer.cornerRadius = 15
         ViewInputRadiusPassword.layer.cornerRadius = 15
-        // Hola login
     }
     
     override func viewWillAppear(_ animated: Bool) {
