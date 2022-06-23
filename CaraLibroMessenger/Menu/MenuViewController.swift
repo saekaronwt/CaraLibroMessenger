@@ -55,11 +55,8 @@ class MenuViewController: UIViewController {
                 }
             }
             
-        }
-        
-        //lblFieldProvider.text = provider.rawValue
-
-        // Do any additional setup after loading the view.
+        }        
+     
     }
     
     @IBAction func clickBtnCloseSession(_ sender: Any) {
@@ -69,7 +66,7 @@ class MenuViewController: UIViewController {
                 do {
                     try Auth.auth().signOut()
                     navigationController?.popViewController(animated: true)
-                    //faltaria agregar que vaya a HomeViewController y limpiar cajas de texto
+                    
                 } catch {
                     //error
                 }
