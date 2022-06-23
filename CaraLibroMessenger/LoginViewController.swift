@@ -6,9 +6,29 @@
 //
 
 import UIKit
-
+import Firebase
+import FirebaseAuth
 class LoginViewController : UIViewController{
     
+    
+    @IBOutlet weak var txtFieldEmail: UITextField!
+    @IBOutlet weak var txtFieldPassword: UITextField!
+    
+    @IBAction func btnLogin(_ sender: Any) {
+        
+        if let email = txtFieldEmail.text, let password = txtFieldPassword.text{
+            Auth.auth().signIn(withEmail: email, password: password){
+                (result, error) in
+                
+                if let result = result, error == nil{
+                    //self.navigationController?.pushViewController(MenuViewController(email:result.user.email!, provider: .basic), animated: true)
+                    self.showAlertWithTitle("Bienvenido", message: "Los datos son correctos", accept: "Aceptar")
+                }else{
+                    self.showAlertWithTitle("Error Login", message: "Los datos son incorrectos", accept: "Aceptar")
+                }
+            }
+        }
+    }
     
     @IBOutlet weak var ViewInputRadiusPassword: UIView!
     @IBOutlet weak var ViewInputRadiusEmail: UIView!
@@ -28,7 +48,7 @@ class LoginViewController : UIViewController{
         super.viewWillAppear(animated)
         self.registerKeyboardNotifications()
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.unregisterKeyboardNotifications()
@@ -61,10 +81,10 @@ extension LoginViewController {
         let animationDuration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double ?? 0
         let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect ?? .zero
         
-       if keyboardFrame.origin.y < self.ViewContainerRadiusTopLeft.frame.maxY {
+        if keyboardFrame.origin.y < self.ViewContainerRadiusTopLeft.frame.maxY {
             
             UIView.animate(withDuration: animationDuration) {
-               self.ContentY.constant = keyboardFrame.origin.y - self.ViewContainerRadiusTopLeft.frame.maxY + 200
+                self.ContentY.constant = keyboardFrame.origin.y - self.ViewContainerRadiusTopLeft.frame.maxY + 200
                 print("CONTENTY" , self.ContentY.constant)
                 self.view.layoutIfNeeded()
             }
@@ -72,7 +92,7 @@ extension LoginViewController {
     }
     
     @objc private func keyboardWillHide(_ notification: Notification) {
-    
+        
         let animationDuration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double ?? 0
         UIView.animate(withDuration: animationDuration) {
             self.ContentY.constant = 30
