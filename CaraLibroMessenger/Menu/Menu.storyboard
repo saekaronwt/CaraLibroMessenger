@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3RE-oq-BU1">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -71,6 +71,43 @@
             </objects>
             <point key="canvasLocation" x="1355.072463768116" y="69.642857142857139"/>
         </scene>
+        <!--Home View Controller-->
+        <scene sceneID="o1M-GV-1xg">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="BVJ-hT-pwH" customClass="HomeViewController" customModule="CaraLibroMessenger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aMI-Ug-MdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5N-7K-Tzr">
+                                <rect key="frame" x="20" y="426" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="UtF-ST-QmD"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Cerrar Sesión" cornerStyle="large">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="22"/>
+                                    <color key="baseBackgroundColor" name="Button"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="btnLogOutUser:" destination="BVJ-hT-pwH" eventType="touchUpInside" id="dBC-Hb-QFH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wwf-qF-Net"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="u5N-7K-Tzr" firstAttribute="leading" secondItem="wwf-qF-Net" secondAttribute="leading" constant="20" id="JDf-QP-crN"/>
+                            <constraint firstItem="u5N-7K-Tzr" firstAttribute="centerY" secondItem="aMI-Ug-MdC" secondAttribute="centerY" id="MMM-4w-vqQ"/>
+                            <constraint firstItem="wwf-qF-Net" firstAttribute="trailing" secondItem="u5N-7K-Tzr" secondAttribute="trailing" constant="20" id="s1w-kh-5rA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="MgL-wB-pdK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lau-7S-00l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1026" y="815"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="0rw-bX-u3e">
             <objects>
@@ -82,7 +119,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="aAd-MX-bCg"/>
+                        <segue destination="BVJ-hT-pwH" kind="relationship" relationship="rootViewController" id="Xru-rc-DKJ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCW-v2-Ft9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -91,6 +128,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="Button">
+            <color red="0.29019607843137257" green="0.31372549019607843" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -10,7 +10,6 @@ import Firebase
 import FirebaseAuth
 class LoginViewController : UIViewController{
     
-    
     @IBOutlet weak var txtFieldEmail: UITextField!
     @IBOutlet weak var txtFieldPassword: UITextField!
     
@@ -20,9 +19,8 @@ class LoginViewController : UIViewController{
             Auth.auth().signIn(withEmail: email, password: password){
                 (result, error) in
                 
-                if let result = result, error == nil{
-                    //self.navigationController?.pushViewController(MenuViewController(email:result.user.email!, provider: .basic), animated: true)
-                    self.showAlertWithTitle("Bienvenido", message: "Los datos son correctos", accept: "Aceptar")
+                if error == nil{
+                    self.showHomeController()
                 }else{
                     self.showAlertWithTitle("Error Login", message: "Los datos son incorrectos", accept: "Aceptar")
                 }
@@ -42,6 +40,9 @@ class LoginViewController : UIViewController{
         ViewContainerRadiusTopLeft.layer.maskedCorners = [.layerMinXMinYCorner]
         ViewInputRadiusEmail.layer.cornerRadius = 15
         ViewInputRadiusPassword.layer.cornerRadius = 15
+        if Auth.auth().currentUser != nil {
+            self.showHomeController()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

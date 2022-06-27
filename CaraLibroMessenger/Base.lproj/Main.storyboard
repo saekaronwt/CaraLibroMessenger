@@ -53,11 +53,15 @@
                                 <rect key="frame" x="0.0" y="301" width="414" height="595"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPf-zS-Te3">
-                                        <rect key="frame" x="32" y="318" width="350" height="55"/>
+                                        <rect key="frame" x="32" y="321" width="350" height="55"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="nhR-9M-dMO"/>
                                         </constraints>
                                         <state key="normal" title="LOGIN"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Sign in " cornerStyle="large">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="22"/>
+                                            <color key="baseBackgroundColor" name="Button"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="btnLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iPA-Xx-xfn"/>
                                         </connections>
@@ -71,7 +75,7 @@
                                                     <constraint firstAttribute="height" constant="36" id="xYZ-Ib-1PP"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIA-vI-Jm0">
                                                 <rect key="frame" x="20" y="6" width="310" height="21"/>
@@ -103,7 +107,7 @@
                                                     <constraint firstAttribute="height" constant="36" id="ccm-c4-Bbm"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEG-Mw-cOq">
                                                 <rect key="frame" x="20" y="6" width="310" height="21"/>
@@ -127,7 +131,8 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8c-Ih-b35">
-                                        <rect key="frame" x="32" y="248" width="123" height="30"/>
+                                        <rect key="frame" x="32" y="248" width="136" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Forgot Password?"/>
                                         <connections>
                                             <segue destination="bgO-pU-3zO" kind="show" id="zI2-j0-axx"/>
@@ -143,7 +148,8 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYb-ep-WDH">
                                         <rect key="frame" x="245" y="405" width="84" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Create"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Sign Up"/>
                                         <connections>
                                             <segue destination="fQy-EG-z3u" kind="show" id="i65-2g-SnF"/>
                                         </connections>
@@ -222,7 +228,11 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="kC1-P7-Ewb"/>
                                         </constraints>
-                                        <state key="normal" title="REGISTER"/>
+                                        <state key="normal" title="Sign Up"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Sign Up" cornerStyle="large">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="22"/>
+                                            <color key="baseBackgroundColor" name="Button"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="btnRegister:" destination="fQy-EG-z3u" eventType="touchUpInside" id="NO2-Og-CCZ"/>
                                         </connections>
@@ -236,7 +246,7 @@
                                                     <constraint firstAttribute="height" constant="36" id="irf-UV-8mg"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLU-al-O2w">
                                                 <rect key="frame" x="20" y="6" width="310" height="21"/>
@@ -268,7 +278,7 @@
                                                     <constraint firstAttribute="height" constant="36" id="OtO-d4-k8X"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNx-W5-p4W">
                                                 <rect key="frame" x="20" y="6" width="310" height="21"/>
@@ -442,8 +452,12 @@
                                     <constraint firstAttribute="height" constant="55" id="Wip-60-V1J"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Send" cornerStyle="large">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="22"/>
+                                    <color key="baseBackgroundColor" name="Button"/>
+                                </buttonConfiguration>
                                 <connections>
-                                    <segue destination="jAb-PV-avy" kind="show" id="nWZ-nV-ERf"/>
+                                    <action selector="btnChangePasswordWithEmail:" destination="bgO-pU-3zO" eventType="touchUpInside" id="xVK-vF-QhB"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ekt-1W-z8C">
@@ -453,7 +467,7 @@
                                         <rect key="frame" x="39" y="8" width="336" height="302"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOc-BX-jPh">
-                                        <rect key="frame" x="32" y="273" width="350" height="36"/>
+                                        <rect key="frame" x="79.5" y="273" width="255" height="36"/>
                                         <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -462,9 +476,8 @@
                                 </subviews>
                                 <color key="backgroundColor" name="Color"/>
                                 <constraints>
-                                    <constraint firstItem="sOc-BX-jPh" firstAttribute="leading" secondItem="ekt-1W-z8C" secondAttribute="leading" constant="32" id="FYb-Vk-nQq"/>
+                                    <constraint firstItem="sOc-BX-jPh" firstAttribute="centerX" secondItem="ekt-1W-z8C" secondAttribute="centerX" id="BGm-9s-Ijt"/>
                                     <constraint firstAttribute="bottom" secondItem="sOc-BX-jPh" secondAttribute="bottom" constant="20" id="JFA-M7-ZAM"/>
-                                    <constraint firstAttribute="trailing" secondItem="sOc-BX-jPh" secondAttribute="trailing" constant="32" id="gFE-aL-kg6"/>
                                     <constraint firstAttribute="bottom" secondItem="0oM-9d-1pc" secondAttribute="bottom" constant="19" id="km4-ZR-ant"/>
                                     <constraint firstItem="0oM-9d-1pc" firstAttribute="leading" secondItem="ekt-1W-z8C" secondAttribute="leading" constant="39" id="s8r-f9-g1y"/>
                                     <constraint firstItem="0oM-9d-1pc" firstAttribute="top" secondItem="ekt-1W-z8C" secondAttribute="top" constant="8" id="tyG-wm-4ww"/>
@@ -480,7 +493,7 @@
                                             <constraint firstAttribute="height" constant="36" id="RPX-xF-S2f"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" name="ColorInput"/>
@@ -492,7 +505,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Email Adress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWp-85-45D">
-                                <rect key="frame" x="32" y="449" width="350" height="21"/>
+                                <rect key="frame" x="136" y="449" width="142" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="nl0-vY-6z6"/>
                                 </constraints>
@@ -511,10 +524,9 @@
                             <constraint firstItem="NE0-Ox-Jwl" firstAttribute="leading" secondItem="efo-jR-R7j" secondAttribute="leading" constant="32" id="OfH-xJ-gS9"/>
                             <constraint firstItem="TzE-3q-i0V" firstAttribute="top" secondItem="NE0-Ox-Jwl" secondAttribute="bottom" constant="30" id="PsI-NR-xne"/>
                             <constraint firstItem="efo-jR-R7j" firstAttribute="trailing" secondItem="TzE-3q-i0V" secondAttribute="trailing" constant="32" id="V0s-fn-M4k"/>
-                            <constraint firstAttribute="trailing" secondItem="KWp-85-45D" secondAttribute="trailing" constant="32" id="b1v-wa-5fp"/>
                             <constraint firstItem="TzE-3q-i0V" firstAttribute="leading" secondItem="efo-jR-R7j" secondAttribute="leading" constant="32" id="bi3-b3-Rd3"/>
                             <constraint firstItem="ekt-1W-z8C" firstAttribute="trailing" secondItem="efo-jR-R7j" secondAttribute="trailing" id="egI-CV-mWx"/>
-                            <constraint firstItem="KWp-85-45D" firstAttribute="leading" secondItem="DEX-6q-ubm" secondAttribute="leading" constant="32" id="p8I-vC-TgS"/>
+                            <constraint firstItem="KWp-85-45D" firstAttribute="centerX" secondItem="DEX-6q-ubm" secondAttribute="centerX" id="jkM-e1-Fba"/>
                             <constraint firstItem="efo-jR-R7j" firstAttribute="bottom" secondItem="TzE-3q-i0V" secondAttribute="bottom" constant="243" id="wfh-jt-FY0"/>
                         </constraints>
                     </view>
@@ -524,6 +536,7 @@
                     <connections>
                         <outlet property="InputRadius" destination="NE0-Ox-Jwl" id="owV-z4-g6x"/>
                         <outlet property="ViewContainerRadiusBottom" destination="ekt-1W-z8C" id="GLT-j0-tXa"/>
+                        <outlet property="emailText" destination="8JI-8q-dmQ" id="rQI-qT-ege"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H3A-Vq-ru8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -544,9 +557,6 @@
                                     <constraint firstAttribute="height" constant="55" id="x4J-S9-y6c"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="llD-Kk-ZNM" kind="show" id="kSP-P8-rrl"/>
-                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EF0-9I-gOL">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="329"/>
@@ -818,6 +828,9 @@
         <image name="GroupTitle" width="283" height="271"/>
         <namedColor name="BgSend">
             <color red="0.49019607843137253" green="0.8784313725490196" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Button">
+            <color red="0.29019607843137257" green="0.31372549019607843" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Color">
             <color red="0.29803921568627451" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

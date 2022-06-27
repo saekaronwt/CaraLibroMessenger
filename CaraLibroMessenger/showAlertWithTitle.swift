@@ -18,4 +18,10 @@ extension UIViewController {
         
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    func showHomeController(){
+        let storyboard = UIStoryboard(name: "Menu", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController ?? HomeViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
 }

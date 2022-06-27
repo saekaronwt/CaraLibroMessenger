@@ -29,13 +29,11 @@ class RegisterViewController: UIViewController{
             Auth.auth().createUser(withEmail: email, password: password){
                 (result, error) in
                 
-                if let result = result, error == nil{
+                if error == nil{
                     
                     self.saveDataUser(name: name, lastName: lastName, email: email)
+                    self.navigationController?.popViewController(animated: true)
                     self.showAlertWithTitle("Usuario Nuevo", message: "Se registro el usuario", accept: "Aceptar")
-                    
-                    self.navigationController?.pushViewController(MenuViewController(email:
-                                                                                        result.user.email!, provider: .basic), animated: true)
                     
                 }else{
                     self.showAlertWithTitle("Error", message: "Se ha producido un error al registrar usuario", accept: "Aceptar")
